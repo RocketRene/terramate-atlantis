@@ -1,0 +1,18 @@
+repos:
+  - id: /.*/
+    workflow: terramate
+    allowed_overrides: [apply_requirements, workflow]
+    allow_custom_workflows: true
+workflows:
+  terramate:
+    plan:
+      steps:
+        - run: terramate fmt --check
+        - run: terraform fmt -recursive -check -diff
+        - run: terramate generate
+        - run: terramate run  --no-recursive -- terraform init -lock-timeout=5m
+        - run: terramate run  --no-recursive -- terraform validate
+        - run: terramate run  --no-recursive  -- terraform plan -out out.tfplan -lock=false
+    apply:
+      steps:
+        - run: terramate run --cloud-sync-terraform-plan-file=out.tfplan --cloud-sync-deployment --no-recursive -- terraform apply -auto-approve out.tfplan
