@@ -5,7 +5,7 @@ globals "terraform" {
 globals "terraform" "backend" {
   bucket       = "terramate-atlantis-poc-terraform-state-backend" # Change this to something unique 
   region       = "us-east-1"
-  dynamo_table = "terraform_atlantis_state" 
+  dynamo_table = "terraform_atlantis_state"
 }
 
 
