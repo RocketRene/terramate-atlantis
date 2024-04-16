@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "terramate-rene-aidan539-movies"
+  bucket = "terramate-rene-avery772-movies"
 
 
   acl = "private"
