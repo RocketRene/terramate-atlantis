@@ -86,11 +86,16 @@ To get this integration up and running locally, follow these simple steps.
 
 Ensure you have the following tools installed and configured on your system:
 
-- AWS-Vault
-- ngrok
-- Terramate CLI
-- GitHub CLI
-- Go Compiler
+- Terraform
+- Atlantis `brew install atlantis`
+- AWS-Vault `brew install aws-vault`
+- ngrok 
+  - `wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz`
+  - `sudo tar xvzf ./ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin`
+
+- Terramate CLI `brew install terramate`
+- GitHub CLI `brew ins` 
+- Go Compiler `brew install go`i
 
 ### Installation
 

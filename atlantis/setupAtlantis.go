@@ -104,7 +104,7 @@ func startAtlantis(url string) {
 --gh-token="%s" \
 --gh-webhook-secret="%s" \
 --repo-allowlist="%s" \
---repo-config="%s" `, url, os.Getenv("OWNER"), os.Getenv("GH_TOKEN"), os.Getenv("SECRET"), os.Getenv("REPO_ALLOWLIST"), os.Getenv("REPO_CONFIG"))
+--repo-config="%s" `, url, os.Getenv("ATLANTIS_GH_USER"), os.Getenv("ATLANTIS_GH_TOKEN"), os.Getenv("ATLANTIS_GH_WEBHOOK_SECRET"), os.Getenv("ATLANTIS_REPO_ALLOWLIST"), os.Getenv("ATLANTIS_REPO_CONFIG"))
 
 	cmd := exec.Command("sh", "-c", cmdString)
 	cmd.Stdout = os.Stdout // Log stdout to os.Stdout
@@ -138,11 +138,11 @@ func main() {
 
 	pubUrl := startNgrok()
 	pubUrlWh := pubUrl + "/events"
-	token := os.Getenv("GH_TOKEN")
-	owner := os.Getenv("OWNER")
-	repo := os.Getenv("REPO")
+	token := os.Getenv("ATLANTIS_GH_TOKEN")
+	owner := os.Getenv("ATLANTIS_GH_USER")
+	repo := os.Getenv("GITHUB_REPO")
 	gh := getClient(token)
-	secret := os.Getenv("SECRET")
+	secret := os.Getenv("ATLANTIS_GH_WEBHOOK_SECRET")
 
 	hooks, err := listWebhooks(gh, owner, repo)
 	if err != nil {
