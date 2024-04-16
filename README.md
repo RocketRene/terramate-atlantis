@@ -8,9 +8,10 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/RocketRene/terramate-atlantis">
-    <img src="images/wordmark.svg" alt="Logo" width="80" height="80">
-  </a>
+  <picture width="160px" align="center">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/terramate-io/brand/5a799813d429116741243b9b06a9f034a3991bf3/darkmode/stamp.svg">
+      <img alt="Terramate" src="https://raw.githubusercontent.com/terramate-io/brand/5a799813d429116741243b9b06a9f034a3991bf3/whitemode/stamp.svg" width="160px" align="center">
+    </picture>
 
 <h3 align="center">How to Use Atlantis and Terramate Cloud on a Local Linux Machine</h3>
 
@@ -94,8 +95,8 @@ Ensure you have the following tools installed and configured on your system:
   - `sudo tar xvzf ./ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin`
 
 - Terramate CLI `brew install terramate`
-- GitHub CLI `brew ins` 
-- Go Compiler `brew install go`i
+- GitHub CLI `brew install gh` 
+- Go Compiler `brew install go`
 
 ### Installation
 
